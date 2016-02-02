@@ -17,6 +17,11 @@
 Route::get('/', [
     'as' => 'image', 'uses' => 'ImgController@index'
 ]);
+
+Route::get('image/moderator', [
+    'as' => 'image.moderator', 'uses' => 'ImgController@moderator'
+]);
+
 Route::get('image/all', [
     'as' => 'image.all', 'uses' => 'ImgController@all'
 ]);

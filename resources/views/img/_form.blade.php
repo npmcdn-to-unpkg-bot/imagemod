@@ -2,11 +2,10 @@
 
 
 <div class="form-group">
-    {!! Form::label('Product Image') !!}
-    {!! Form::file('image', null) !!}
+    {{ Form::file('image', null, array('class' => 'form-control')) }}
 </div>
 <div class="form-group">
-    {!! Form::submit('Upload!') !!}
+    {!! Form::submit('Upload!', array('class' => 'btn btn-default')) !!}
 </div>
 
 </div>

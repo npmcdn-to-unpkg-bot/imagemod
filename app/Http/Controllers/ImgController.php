@@ -21,7 +21,14 @@ class ImgController extends Controller
     public function index()
     {
         $images = Image::all();
-        return view('img.index', ['images' => $images]);    
+        // dd($images);
+        return view('img.user', ['images' => $images]);    
+    }
+
+    public function moderator()
+    {
+        $images = Image::withAnyStatus()->get();
+        return view('img.moderator', ['images' => $images]);    
     }
 
         

@@ -30,15 +30,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">ImageMod</a>
+              <a class="navbar-brand" href="/">ImageMod</a>
             </div>
-
+            <ul class="nav navbar-nav">
+              <li><a href="image/moderator">Moderator view</a></li>
+            </ul>
             
           </div><!-- /.container-fluid -->
         </nav>
         <div class="row">
           <div class="col-md-9">@yield('content')</div>
-          <div class="col-md-3">@include('_sidebar')</div>
+          <div class="col-md-3">@yield('sidebar')</div>
         </div>
         
     </div>
