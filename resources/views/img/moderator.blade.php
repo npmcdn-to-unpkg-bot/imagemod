@@ -18,6 +18,10 @@
 	    <div class="panel-body">
 	      <img src="/img/{{ $image->file_name }}" alt="альтернативный текст">
 	    </div>
+	    <div class="panel-footer">
+	    	<a class="btn btn-success" href="{{ URL::to('image/setapproved/' . $image->id) }}">Approve</a>
+	    	<a class="btn btn-danger pull-right" href="{{ URL::to('image/setrejected/' . $image->id) }}">Reject</a>
+	    </div>
 	  </div>
 	@endforeach
 

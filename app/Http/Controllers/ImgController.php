@@ -21,27 +21,34 @@ class ImgController extends Controller
     public function index()
     {
         $images = Image::all();
-        // dd($images);
+        //dd($images);
         return view('img.user', ['images' => $images]);    
     }
 
     public function moderator()
     {
-        $images = Image::withAnyStatus()->get();
+        //dd($images);
+        $images = Image::pending()->get();
         return view('img.moderator', ['images' => $images]);    
     }
 
         
+    public function setapproved($id)
+    {
+        Image::approve($id);
+        return redirect('image/moderator');   
+    }
+
+       public function setrejected($id)
+    {
+        Image::reject($id);
+        return redirect('image/moderator');   
+    }
+
     public function all()
     {
         $images = Image::withAnyStatus()->get();
-        return view('img.index', ['images' => $images]);    
-    }
-
-    public function panding()
-    {
-        $images = Image::pending()->get();
-        return view('img.index', ['images' => $images]);    
+        return view('img.moderator', ['images' => $images]);    
     }
 
         
@@ -49,15 +56,9 @@ class ImgController extends Controller
     public function rejected()
     {
         $images = Image::rejected()->get();
-        return view('img.index', ['images' => $images]);    
+        return view('img.moderator', ['images' => $images]);     
     }
 
-
-    public function moderate()
-    {
-        $images = Image::all();
-        return view('img.index', ['images' => $images]);    
-    }
 
 
     

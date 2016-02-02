@@ -22,6 +22,14 @@ Route::get('image/moderator', [
     'as' => 'image.moderator', 'uses' => 'ImgController@moderator'
 ]);
 
+Route::get('image/setapproved/{id}', [
+    'as' => 'image.setapproved', 'uses' => 'ImgController@setapproved'
+]);
+
+Route::get('image/setrejected/{id}', [
+    'as' => 'image.setrejected', 'uses' => 'ImgController@setrejected'
+]);
+
 Route::get('image/all', [
     'as' => 'image.all', 'uses' => 'ImgController@all'
 ]);
